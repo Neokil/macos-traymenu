@@ -1,0 +1,49 @@
+{
+    "Icon": "~/.traymenu/icons/menu.png",
+    "Title": " GCP",
+    "Tooltip": "Traymenu configured with GCP",
+    "Items": [
+        {
+            "Icon": "~/.traymenu/icons/stage.png",
+            "Title": "Stage",
+            "Tooltip": "Stage Item",
+            "Items": [
+                {
+                    "Icon": "~/.traymenu/icons/businessdb.png",
+                    "Title": "BusinessDB",
+                    "Tooltip": "BusinessDB",
+                    "Action": "cd ~/gcp/cloud-sql/ && ./cloud_sql_proxy -instances=$(gcloud sql instances describe stage-business-api-master --format=\"value(connectionName)\")=tcp:0.0.0.0:20000;",
+                    "CancellableAction": true
+                },
+                {
+                    "Icon": "~/.traymenu/icons/steeringdb.png",
+                    "Title": "SteeringDB",
+                    "Tooltip": "SteeringDB",
+                    "Action": "cd ~/gcp/cloud-sql/ && ./cloud_sql_proxy -instances=$(gcloud sql instances describe stage-steeringdb --format=\"value(connectionName)\")=tcp:0.0.0.0:20001;",
+                    "CancellableAction": true
+                }
+            ]
+        },
+        {
+            "Icon": "~/.traymenu/icons/production.png",
+            "Title": "Stage",
+            "Tooltip": "Stage Item",
+            "Items": [
+                {
+                    "Icon": "~/.traymenu/icons/businessdb.png",
+                    "Title": "BusinessDB",
+                    "Tooltip": "BusinessDB",
+                    "Action": "cd ~/gcp/cloud-sql/ && ./cloud_sql_proxy -instances=$(gcloud sql instances describe prod-business-api-master --format=\"value(connectionName)\")=tcp:0.0.0.0:10000;",
+                    "CancellableAction": true
+                },
+                {
+                    "Icon": "~/.traymenu/icons/steeringdb.png",
+                    "Title": "SteeringDB",
+                    "Tooltip": "SteeringDB",
+                    "Action": "cd ~/gcp/cloud-sql/ && ./cloud_sql_proxy -instances=$(gcloud sql instances describe prod-steeringdb --format=\"value(connectionName)\")=tcp:0.0.0.0:10001;",
+                    "CancellableAction": true
+                }
+            ]
+        }
+    ]
+}

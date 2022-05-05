@@ -1,0 +1,19 @@
+linters:
+  enable-all: true
+  disable:
+    - lll
+    - wsl
+    - gci
+    - tagliatelle
+    - varnamelen
+    - ireturn
+    - exhaustivestruct
+    - goerr113
+    - ifshort
+    - funlen
+
+    # deprecated
+    - scopelint
+    - golint
+    - interfacer
+    - maligned
